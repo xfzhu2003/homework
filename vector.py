@@ -80,8 +80,8 @@ class Vector(object):
     def is_parallel_to(self, v):
         return (self.is_zero() or
                 v.is_zero() or
-                self.angle_with(v) == 0 or
-                self.angle_with(v) == pi)
+                abs(self.angle_with(v)) < 1e-2 or
+                abs(self.angle_with(v) - pi) < 1e-2)
 
     def is_zero(self, tolerance=1e-10):
         return self.magniude() < tolerance

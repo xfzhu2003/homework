@@ -43,7 +43,7 @@ class Plane(object):
         try:
             n = self.normal_vector.coordinates
             c = self.constant_term
-            basepoint_coords = ['0'] * self.dimension
+            basepoint_coords = [Decimal(0)] * self.dimension
 
             initial_index = Plane.first_nonzero_index(n)
             initial_coefficient = Decimal(n[initial_index])
@@ -115,5 +115,14 @@ class MyDecimal(Decimal):
         return abs(self) < eps
 
 
-p = Plane(Vector([-0.412, 3.806, 0.718]), -3.46)
-print p.is_parallel_to(Plane(Vector([1.03, -9.515, -1.82]), 8.65))
+p = Plane(Vector([Decimal(-0.412), Decimal(3.806), Decimal(0.718)]), Decimal(-3.46))
+print p.is_parallel_to(Plane(Vector([Decimal(1.03), Decimal(-9.515), Decimal(-1.82)]), Decimal(8.65)))
+print p == Plane(Vector([Decimal(1.03), Decimal(-9.515), Decimal(-1.82)]), Decimal(8.65))
+
+p = Plane(Vector([Decimal(2.611), Decimal(5.528), Decimal(0.283)]), Decimal(4.6))
+print p.is_parallel_to(Plane(Vector([Decimal(7.715), Decimal(8.306), Decimal(5.342)]), Decimal(3.76)))
+print p == Plane(Vector([Decimal(7.715), Decimal(8.306), Decimal(5.342)]), Decimal(3.76))
+
+p = Plane(Vector([Decimal(-7.926), Decimal(8.625), Decimal(-7.217)]), Decimal(-7.952))
+print p.is_parallel_to(Plane(Vector([Decimal(-2.642), Decimal(2.875), Decimal(-2.404)]), Decimal(-2.443)))
+print p == Plane(Vector([Decimal(-2.642), Decimal(2.875), Decimal(-2.404)]), Decimal(-2.443))
