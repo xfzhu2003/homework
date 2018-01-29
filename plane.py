@@ -109,20 +109,19 @@ class Plane(object):
                 return k
         raise Exception(Plane.NO_NONZERO_ELTS_FOUND_MSG)
 
-
 class MyDecimal(Decimal):
     def is_near_zero(self, eps=1e-10):
         return abs(self) < eps
 
 
-p = Plane(Vector([Decimal(-0.412), Decimal(3.806), Decimal(0.718)]), Decimal(-3.46))
-print p.is_parallel_to(Plane(Vector([Decimal(1.03), Decimal(-9.515), Decimal(-1.82)]), Decimal(8.65)))
-print p == Plane(Vector([Decimal(1.03), Decimal(-9.515), Decimal(-1.82)]), Decimal(8.65))
-
-p = Plane(Vector([Decimal(2.611), Decimal(5.528), Decimal(0.283)]), Decimal(4.6))
-print p.is_parallel_to(Plane(Vector([Decimal(7.715), Decimal(8.306), Decimal(5.342)]), Decimal(3.76)))
-print p == Plane(Vector([Decimal(7.715), Decimal(8.306), Decimal(5.342)]), Decimal(3.76))
-
-p = Plane(Vector([Decimal(-7.926), Decimal(8.625), Decimal(-7.217)]), Decimal(-7.952))
-print p.is_parallel_to(Plane(Vector([Decimal(-2.642), Decimal(2.875), Decimal(-2.404)]), Decimal(-2.443)))
-print p == Plane(Vector([Decimal(-2.642), Decimal(2.875), Decimal(-2.404)]), Decimal(-2.443))
+# p = Plane(Vector([Decimal(-0.412), Decimal(3.806), Decimal(0.718)]), Decimal(-3.46))
+# print p.is_parallel_to(Plane(Vector([Decimal(1.03), Decimal(-9.515), Decimal(-1.82)]), Decimal(8.65)))
+# print p == Plane(Vector([Decimal(1.03), Decimal(-9.515), Decimal(-1.82)]), Decimal(8.65))
+#
+# p = Plane(Vector([Decimal(2.611), Decimal(5.528), Decimal(0.283)]), Decimal(4.6))
+# print p.is_parallel_to(Plane(Vector([Decimal(7.715), Decimal(8.306), Decimal(5.342)]), Decimal(3.76)))
+# print p == Plane(Vector([Decimal(7.715), Decimal(8.306), Decimal(5.342)]), Decimal(3.76))
+#
+# p = Plane(Vector([Decimal(-7.926), Decimal(8.625), Decimal(-7.217)]), Decimal(-7.952))
+# print p.is_parallel_to(Plane(Vector([Decimal(-2.642), Decimal(2.875), Decimal(-2.404)]), Decimal(-2.443)))
+# print p == Plane(Vector([Decimal(-2.642), Decimal(2.875), Decimal(-2.404)]), Decimal(-2.443))
